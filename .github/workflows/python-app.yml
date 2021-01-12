@@ -33,5 +33,11 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        sudo apt-get install tree
-        tree -d 6 .
+        # sudo apt-get install tree
+        # tree -d 6 .
+        mkdir build
+        cd build
+        git clone https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal.git
+        cd Vein-Detection-and-Removal/code/scripts
+        python3 clothes-classifier.py
+
