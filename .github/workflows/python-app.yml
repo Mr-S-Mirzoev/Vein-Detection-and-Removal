@@ -38,6 +38,8 @@ jobs:
         mkdir build
         cd build
         git clone https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal.git
-        cd Vein-Detection-and-Removal/code/scripts
+        cd Vein-Detection-and-Removal
+        git checkout ci-cd-patch
+        cd code/scripts
         python3 clothes-classifier.py
 
