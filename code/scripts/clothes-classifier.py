@@ -146,13 +146,3 @@ print(np.argmax(predictions_single[0]))
 
 # Сохраним веса
 model.save_weights('./checkpoints/my_checkpoint')
-
-# Создадим новый экземпляр модели
-model = create_model()
-
-# Восстановим веса
-model.load_weights('./checkpoints/my_checkpoint')
-
-# Оценим модель
-loss,acc = model.evaluate(test_images,  test_labels, verbose=2)
-print("Restored model, accuracy: {:5.2f}%".format(100*acc))
