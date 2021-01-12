@@ -41,5 +41,9 @@ jobs:
         cd Vein-Detection-and-Removal
         git checkout ci-cd-patch
         cd code/scripts
+        pip install --upgrade tensorflow
+        pip install Keras
+        pip install numpy
+        pip install matplotlib
         python3 clothes-classifier.py
 
