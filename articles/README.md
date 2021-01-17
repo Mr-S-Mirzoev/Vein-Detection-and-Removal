@@ -7,3 +7,5 @@ https://medium.com/analytics-vidhya/removing-objects-from-pictures-with-deep-lea
 http://www.inf-cv.uni-jena.de/part_discovery - Part discovery
 
 https://github.com/cvjena/PartDetectorDisovery - Part detector discovery
+
+https://github.com/peace195/tensorflow-lite-YOLOv3 - YOLO to TFlite
