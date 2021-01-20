@@ -13,3 +13,14 @@ Build with cmake:
 
 	cmake -B build
 	make -C build
+
+# Current state
+
+├── articles - Articles
+├── code
+│   ├── deps
+│   │   └── Mask_RCNN - Mask RCNN library (old, bug-having version)
+│   └── src - Source files
+├── datasets
+│   └── photos - Veins on the photos
+└── docs - Documentation
