@@ -1,18 +1,17 @@
 # Pool of articles to read
 
-https://github.com/sujaykhandekar/Automated-objects-removal-inpainter - Automatic object remover and inpainter
+[Automatic object remover and inpainter](https://github.com/sujaykhandekar/Automated-objects-removal-inpainter)
 
-https://www.jeremyjordan.me/semantic-segmentation/ - Object segmentation
+[Object segmentation](https://www.jeremyjordan.me/semantic-segmentation/)
 
-https://medium.com/analytics-vidhya/removing-objects-from-pictures-with-deep-learning-5e7c35f3f0dd - Object remover
+[Object remover](https://medium.com/analytics-vidhya/removing-objects-from-pictures-with-deep-learning-5e7c35f3f0dd)
 
-http://www.inf-cv.uni-jena.de/part_discovery - Part discovery
+[Part discovery](http://www.inf-cv.uni-jena.de/part_discovery)
 
-https://github.com/cvjena/PartDetectorDisovery - Part detector discovery
+[Part detector discovery](https://github.com/cvjena/PartDetectorDisovery)
 
-[An overview of semantic image segmentation]("An overview of semantic image segmentation_.pdf")
-###[An overview of semantic image segmentation](https://github.com/user/repo/blob/branch/other_file.md)
+[An overview of semantic image segmentation](https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal/blob/main/articles/An%20overview%20of%20semantic%20image%20segmentation_.pdf)
 
-https://github.com/peace195/tensorflow-lite-YOLOv3 - YOLO to TFlite
+[YOLO to TFlite](https://github.com/peace195/tensorflow-lite-YOLOv3)
 
-https://towardsdatascience.com/training-a-tensorflow-faster-r-cnn-object-detection-model-on-your-own-dataset-b3b175708d6d
+[Training FasterRCNN on custom dataset](https://towardsdatascience.com/training-a-tensorflow-faster-r-cnn-object-detection-model-on-your-own-dataset-b3b175708d6d)
