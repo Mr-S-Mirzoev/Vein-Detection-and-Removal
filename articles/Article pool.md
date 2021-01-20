@@ -20,4 +20,4 @@
 
 10. [TF Object detection API](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html)
 
-11. [Custom object detection (useful for updating the ipynb](https://towardsdatascience.com/custom-object-detection-using-tensorflow-from-scratch-e61da2e10087)
+11. [Custom object detection (useful for updating the ipynb)](https://towardsdatascience.com/custom-object-detection-using-tensorflow-from-scratch-e61da2e10087)
