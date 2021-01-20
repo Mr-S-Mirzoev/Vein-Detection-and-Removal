@@ -17,3 +17,5 @@
 8. [Training FasterRCNN on custom dataset](https://towardsdatascience.com/training-a-tensorflow-faster-r-cnn-object-detection-model-on-your-own-dataset-b3b175708d6d)
 
 9. [Tensorflow transfer code from 1.x to 2.x](https://www.tensorflow.org/guide/upgrade)
+
+10. [TF Object detection API](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html)
