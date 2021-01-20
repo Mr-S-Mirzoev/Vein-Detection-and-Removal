@@ -15,3 +15,5 @@
 7. [YOLO to TFlite](https://github.com/peace195/tensorflow-lite-YOLOv3)
 
 8. [Training FasterRCNN on custom dataset](https://towardsdatascience.com/training-a-tensorflow-faster-r-cnn-object-detection-model-on-your-own-dataset-b3b175708d6d)
+
+9. [Tensorflow transfer code from 1.x to 2.x](https://www.tensorflow.org/guide/upgrade)
