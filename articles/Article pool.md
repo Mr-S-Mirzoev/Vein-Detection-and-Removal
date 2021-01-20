@@ -10,4 +10,8 @@ http://www.inf-cv.uni-jena.de/part_discovery - Part discovery
 
 https://github.com/cvjena/PartDetectorDisovery - Part detector discovery
 
-[An overview](An overview of semantic image segmentation_.pdf)
+[An overview of semantic image segmentation](An overview of semantic image segmentation_.pdf)
+
+https://github.com/peace195/tensorflow-lite-YOLOv3 - YOLO to TFlite
+
+https://towardsdatascience.com/training-a-tensorflow-faster-r-cnn-object-detection-model-on-your-own-dataset-b3b175708d6d
