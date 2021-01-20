@@ -19,3 +19,5 @@
 9. [Tensorflow transfer code from 1.x to 2.x](https://www.tensorflow.org/guide/upgrade)
 
 10. [TF Object detection API](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html)
+
+11. [Custom object detection (useful for updating the ipynb](https://towardsdatascience.com/custom-object-detection-using-tensorflow-from-scratch-e61da2e10087)
