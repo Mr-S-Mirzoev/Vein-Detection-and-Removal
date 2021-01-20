@@ -21,3 +21,7 @@
 10. [TF Object detection API](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/install.html)
 
 11. [Custom object detection (useful for updating the ipynb)](https://towardsdatascience.com/custom-object-detection-using-tensorflow-from-scratch-e61da2e10087)
+
+12. [Metal Additive Manufacturing Parts Inspection Using Convolutional Neural Network](https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal/blob/main/articles/Metal%20Additive%20Manufacturing%20Parts%20Inspection%20Using%20Convolutional%20Neural%20Network.pdf)
+
+13. [Scratch Detection in Cars Using a Convolutional Neural Network by Means of Transfer Learning](https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal/blob/main/articles/Scratch%20Detection%20in%20Cars%20Using%20a%20Convolutional%20Neural%20Network%20by%20Means%20of%20Transfer%20Learning.pdf)
