@@ -1,0 +1,1 @@
+# List of read articles which are marked useless for our case
