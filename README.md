@@ -5,6 +5,7 @@ The project for the idea to remove veins from a photo as after a surgical operat
 
 - [Rules of collaboration](#rules)
 - [Project Structure](#structure)
+- [Recommended soft](#recommend)
 - [Contributors](#thanks)
 
 <a name="rules"/>
@@ -49,6 +50,10 @@ If we work together on some feature, we should name the branch with suffix `feat
     │   └── README.md
     ├── LICENSE
     └── README.md
+
+<a name="recommend"/>
+
+[Image annotation tool](https://github.com/tzutalin/labelImg) - for creating bounding boxes
 
 <a name="thanks"/>
 
