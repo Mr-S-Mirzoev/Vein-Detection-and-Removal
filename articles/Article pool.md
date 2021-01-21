@@ -32,3 +32,4 @@
     - [Page 3](https://towardsdatascience.com/image-processing-class-egbe443-4-filters-aa1037676130)
     - [Page 4](https://www.researchgate.net/publication/265042131_Image_Enhancement_using_Filtering_Techniques)
     - [Page 5](http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/node8.html)
+    - [Page 6](https://www.princeton.edu/~cuff/ele201/kulkarni_text/filtering.pdf)
