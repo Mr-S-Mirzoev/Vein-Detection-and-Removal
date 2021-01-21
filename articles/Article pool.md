@@ -25,3 +25,10 @@
 12. [Metal Additive Manufacturing Parts Inspection Using Convolutional Neural Network](https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal/blob/main/articles/Metal%20Additive%20Manufacturing%20Parts%20Inspection%20Using%20Convolutional%20Neural%20Network.pdf)
 
 13. [Scratch Detection in Cars Using a Convolutional Neural Network by Means of Transfer Learning](https://github.com/Mr-S-Mirzoev/Vein-Detection-and-Removal/blob/main/articles/Scratch%20Detection%20in%20Cars%20Using%20a%20Convolutional%20Neural%20Network%20by%20Means%20of%20Transfer%20Learning.pdf)
+
+14. Filters
+    - [Page 1](https://homepages.inf.ed.ac.uk/rbf/HIPR2/filtops.htm)
+    - [Page 2](https://ai.stanford.edu/~syyeung/cvweb/tutorial1.html)
+    - [Page 3](https://towardsdatascience.com/image-processing-class-egbe443-4-filters-aa1037676130)
+    - [Page 4](https://www.researchgate.net/publication/265042131_Image_Enhancement_using_Filtering_Techniques)
+    - [Page 5](http://fourier.eng.hmc.edu/e101/lectures/Image_Processing/node8.html)
