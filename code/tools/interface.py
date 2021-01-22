@@ -33,7 +33,8 @@ image_viewer_column = [
 
 filter_choose_column = [
     [sg.Text("Choose which filters to apply:")],
-    [sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-'), sg.Checkbox('Equalize', size=(20, 1), key='-EQUALIZE-')],
+    [sg.Checkbox('Gray Equalize', size=(12, 1), key='-GRAY-EQUALIZE-'), sg.Checkbox('Equalize', size=(20, 1), key='-EQUALIZE-')],
+    [[sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-')]
     [sg.Button("Save result", key='-SAVE-'), sg.Button("Apply", key='-APPLY-')],
 ]
 
@@ -96,14 +97,19 @@ while True:
 
             pipe = list()
             mask = filter_mask.get_bit_mask(values)
+            
             if filter_mask.is_equalized(mask):
                 pipe.append(equalize_filter.EqualizeFilter())
+
+            if filter_mask.is_g_equalized(mask):
+                pipe.append(equalize_filter.EqualizeFilter(gray=True))
 
             if filter_mask.is_normalized(mask):
                 pipe.append(median_filter.MedianBlurFilter())
 
             fil_pipe = filter_pipe.FilterPipe(pipe)
             result = fil_pipe.work(imgCV)
+            last_filtered_file = deepcopy(result)
             
             imgbytes = result.make_gui_format()
 
@@ -136,7 +142,7 @@ while True:
                 sg.FileSaveAs(initial_folder='.')
             ],
             [
-                sg.CloseButton(button_text="OK", "--SAVE-PATH-VERIFIED--")
+                sg.Button(button_text="OK", key="--SAVE-PATH-VERIFIED--")
             ]
         ]
         sub_window = sg.Window(
@@ -154,13 +160,11 @@ while True:
                 filename = values['Save As']
                 if filename:
                     sub_window['File to Save'].update(value=filename)
+            elif event == '--SAVE-PATH-VERIFIED--':
+                last_filtered_file.save(filename)
+                print("Wrote file to {}".format(filename))
 
         sub_window.close()
                 
    
 window.close()
-
-img = image.ImageData("/home/sergey/Pictures/vscode_ptrscr.png")
-mf = median_filter.MedianBlurFilter()
-image_res = mf.apply(img)
-image_res.save("here.jpg")

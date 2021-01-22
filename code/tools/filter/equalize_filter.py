@@ -11,13 +11,16 @@ from image import ImageData, ImageType
 from PIL import Image
 
 class EqualizeFilter(abstract_filter.Filter):
+    def __init__(self, gray=False):
+        self.gray_ = gray
+
     def apply(self, inImage: ImageData):
 
-        equalize_applied = EqualizeFilter.equalize_this(inImage)
+        equalize_applied = EqualizeFilter.equalize_this(inImage, gray_scale=self.gray_)
         return ImageData(equalize_applied, ImageType.NUMPY)
 
     def __repr__(self):
-        return 'EqualizeFilter from code/tools/filer/equalizer_filter.py'
+        return '{}EqualizeFilter from code/tools/filer/equalizer_filter.py'.format('Gray' if self.gray_ else "")
 
     @staticmethod
     def read_this(image_file: ImageData, gray_scale=False):
