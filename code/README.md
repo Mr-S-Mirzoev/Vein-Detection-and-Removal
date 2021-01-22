@@ -13,3 +13,5 @@ Build with cmake:
 
 	cmake -B build
 	make -C build
+
+# Currently supported filters

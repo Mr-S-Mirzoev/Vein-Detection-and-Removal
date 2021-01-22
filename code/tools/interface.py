@@ -1,4 +1,5 @@
-from filter import filter_mask, filter_pipe
+from filter import mask as fmask
+from filter import pipe as fpipe
 from filter import median_filter, equalize_filter
 import image
 
@@ -96,18 +97,18 @@ while True:
             imgCV = deepcopy(last_file)
 
             pipe = list()
-            mask = filter_mask.get_bit_mask(values)
+            mask = fmask.get_bit_mask(values)
             
-            if filter_mask.is_equalized(mask):
+            if fmask.is_equalized(mask):
                 pipe.append(equalize_filter.EqualizeFilter())
 
-            if filter_mask.is_g_equalized(mask):
+            if fmask.is_g_equalized(mask):
                 pipe.append(equalize_filter.EqualizeFilter(gray=True))
 
-            if filter_mask.is_median(mask):
+            if fmask.is_median(mask):
                 pipe.append(median_filter.MedianBlurFilter())
 
-            fil_pipe = filter_pipe.FilterPipe(pipe)
+            fil_pipe = fpipe.FilterPipe(pipe)
             result = fil_pipe.work(imgCV)
             last_filtered_file = deepcopy(result)
             
