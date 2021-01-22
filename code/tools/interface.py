@@ -34,7 +34,7 @@ image_viewer_column = [
 filter_choose_column = [
     [sg.Text("Choose which filters to apply:")],
     [sg.Checkbox('Gray Equalize', size=(12, 1), key='-GRAY-EQUALIZE-'), sg.Checkbox('Equalize', size=(20, 1), key='-EQUALIZE-')],
-    [[sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-')]
+    [sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-')],
     [sg.Button("Save result", key='-SAVE-'), sg.Button("Apply", key='-APPLY-')],
 ]
 
@@ -104,7 +104,7 @@ while True:
             if filter_mask.is_g_equalized(mask):
                 pipe.append(equalize_filter.EqualizeFilter(gray=True))
 
-            if filter_mask.is_normalized(mask):
+            if filter_mask.is_median(mask):
                 pipe.append(median_filter.MedianBlurFilter())
 
             fil_pipe = filter_pipe.FilterPipe(pipe)
