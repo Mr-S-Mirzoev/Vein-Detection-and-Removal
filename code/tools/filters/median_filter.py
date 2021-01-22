@@ -2,7 +2,7 @@ from enum import Enum
 
 import cv2
 
-from filter import abstract_filter
+from filters import abstract_filter
 from image import ImageData, ImageType
 
 from PIL import Image

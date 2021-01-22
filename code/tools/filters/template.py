@@ -1,6 +1,6 @@
 import cv2
 
-from filter import abstract_filter
+from filters import abstract_filter
 from image import ImageData, ImageType
 
 

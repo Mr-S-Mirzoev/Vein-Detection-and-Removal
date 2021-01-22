@@ -1,6 +1,6 @@
-from filter import mask as fmask
-from filter import pipe as fpipe
-from filter import median_filter, equalize_filter, gaussian_filter
+from utilities import mask as fmask
+from utilities import pipe as fpipe
+from filters import median_filter, equalize_filter, gaussian_filter
 import image
 
 # img_viewer.py
@@ -21,7 +21,7 @@ file_list_column = [
     [
         sg.Text("Image Folder"),
         sg.In(size=(25, 1), enable_events=True, key="-FOLDER-"),
-        sg.FolderBrowse(),
+        sg.FolderBrowse(initial_folder='datasets/photos'),
     ],
     [
         sg.Listbox(
@@ -41,9 +41,9 @@ filter_choose_column = [
     [ # ROW 1
         sg.Text("Choose which filters to apply:")
     ],
-    [ # ROW 2
-        sg.Checkbox('Gray Equalize', size=(12, 1), key='-GRAY-EQUALIZE-'), 
-        sg.Checkbox('Equalize', size=(20, 1), key='-EQUALIZE-')
+    [ # ROW 2 
+        sg.Checkbox('Equalize', size=(12, 1), key='-EQUALIZE-'),
+        sg.Checkbox('Gray Equalize', size=(20, 1), key='-GRAY-EQUALIZE-')
     ],
     [ # ROW 3
         sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-'),
@@ -176,7 +176,7 @@ while True:
 
         while True:
             event, values = sub_window.Read()
-            print("event:", event, "values: ", values)
+            #print("event:", event, "values: ", values)
             if event is None or event == 'Exit':
                 break
 

@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.ndimage as ndimage
 
-from filter import abstract_filter
+from filters import abstract_filter
 from image import ImageData, ImageType
 
 
