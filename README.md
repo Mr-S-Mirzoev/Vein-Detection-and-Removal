@@ -40,10 +40,6 @@ If we work together on some feature, we should name the branch with suffix `feat
     
     .
     ├── articles
-    │   ├── An overview of semantic image segmentation_.pdf
-    │   ├── Article pool.md - Pool, from which we read articles.
-    │   ├── Metal Additive Manufacturing Parts Inspection Using Convolutional Neural Network.pdf
-    │   ├── Scratch Detection in Cars Using a Convolutional Neural Network by Means of Transfer Learning.pdf
     │   ├── useful - folder with useful articles
     │   ├── Useful.md - useful articles retold briefly
     │   ├── useless - folder with useless articles
@@ -62,11 +58,10 @@ If we work together on some feature, we should name the branch with suffix `feat
     │       └── last.txt - Last reviewed image
     ├── docs
     │   └── README.md
-    ├── here.jpg
     ├── LICENSE
-    ├── localization.ipynb
+    ├── localization.ipynb - deprecated (for removal)
     ├── README.md
-    └── ssd_detector.ipynb
+    └── ssd_detector.ipynb - ssd detector (may be helpful for leg segmentation)
 
 ## Recommended Soft
 
