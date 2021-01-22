@@ -1,6 +1,6 @@
 from filter import mask as fmask
 from filter import pipe as fpipe
-from filter import median_filter, equalize_filter
+from filter import median_filter, equalize_filter, gaussian_filter
 import image
 
 # img_viewer.py
@@ -9,6 +9,11 @@ from copy import deepcopy
 import PySimpleGUI as sg
 import os.path
 import cv2
+
+
+"""""""""""""""""""""""""""
+        LAYOUT SETUP
+"""""""""""""""""""""""""""
 
 # First the window layout in 2 columns
 
@@ -33,10 +38,21 @@ image_viewer_column = [
 ]
 
 filter_choose_column = [
-    [sg.Text("Choose which filters to apply:")],
-    [sg.Checkbox('Gray Equalize', size=(12, 1), key='-GRAY-EQUALIZE-'), sg.Checkbox('Equalize', size=(20, 1), key='-EQUALIZE-')],
-    [sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-')],
-    [sg.Button("Save result", key='-SAVE-'), sg.Button("Apply", key='-APPLY-')],
+    [ # ROW 1
+        sg.Text("Choose which filters to apply:")
+    ],
+    [ # ROW 2
+        sg.Checkbox('Gray Equalize', size=(12, 1), key='-GRAY-EQUALIZE-'), 
+        sg.Checkbox('Equalize', size=(20, 1), key='-EQUALIZE-')
+    ],
+    [ # ROW 3
+        sg.Checkbox('Median', size=(12, 1), key='-MEDIAN-'),
+        sg.Checkbox('Gaussian', size=(20, 1), key='-GAUSSIAN-')
+    ],
+    [ # ROW 4
+        sg.Button("Save result", key='-SAVE-'), 
+        sg.Button("Apply", key='-APPLY-')
+    ],
 ]
 
 # ----- Full layout -----
@@ -50,6 +66,10 @@ layout = [
     ]
 ]
 
+"""""""""""""""""""""""""""
+        GUI INIT
+"""""""""""""""""""""""""""
+
 window = sg.Window("Image Viewer", layout, icon='code/tools/image.png')
 last_file = None
 last_filtered_file = None
@@ -59,6 +79,7 @@ while True:
     event, values = window.read()
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
+    
     # Folder name was filled in, make a list of files in the folder
     if event == "-FOLDER-":
         folder = values["-FOLDER-"]
@@ -75,13 +96,17 @@ while True:
             and f.lower().endswith((".png", ".gif", ".jpg"))
         ]
         window["-FILE LIST-"].update(fnames)
-    elif event == "-FILE LIST-":  # A file was chosen from the listbox
+
+    # A file was chosen from the listbox
+    elif event == "-FILE LIST-":  
         try:
             filename = os.path.join(
-                values["-FOLDER-"], values["-FILE LIST-"][0]
+                values["-FOLDER-"], 
+                values["-FILE LIST-"][0]
             )
             window["-TOUT-"].update(filename)
 
+            # Open the image and fill it into the GUI-supported format
             imgCV = image.ImageData(filename)
             last_file = imgCV
             imgbytes = imgCV.make_gui_format()
@@ -92,10 +117,12 @@ while True:
             print("Failed: {}".format(e))
             pass
 
+    # An apply button was triggered
     elif event == '-APPLY-':
-        if last_file:
+        if last_file: # if there is any chosen file
             imgCV = deepcopy(last_file)
 
+            # Create a pipeline of filters
             pipe = list()
             mask = fmask.get_bit_mask(values)
             
@@ -108,32 +135,26 @@ while True:
             if fmask.is_median(mask):
                 pipe.append(median_filter.MedianBlurFilter())
 
-            fil_pipe = fpipe.FilterPipe(pipe)
-            result = fil_pipe.work(imgCV)
-            last_filtered_file = deepcopy(result)
+            if fmask.is_gaussian(mask):
+                pipe.append(gaussian_filter.GaussianFilter())
+
+            if len(pipe):
+                fil_pipe = fpipe.FilterPipe(pipe)
+
+                # Run an image through the pipe and get the result
+                result = fil_pipe.work(imgCV)
+            else:
+                result = imgCV
             
+            last_filtered_file = deepcopy(result)
             imgbytes = result.make_gui_format()
 
             window["-IMAGE-"].update(data=imgbytes)
 
     elif event == '-SAVE-':
         sg.theme("DarkTeal2")
-        """
-        fname = sg.Window('My Script',
-                        [[sg.Text('Document to open')],
-                        [sg.In(), sg.FileBrowse()],
-                        [sg.Save(), sg.Cancel()]],
-                        icon="code/tools/save.png").read(close=True)[1][0]
-       
-        if not fname:
-            sg.popup("Cancel", "No filename supplied",
-                     icon="code/tools/save.png")
-            print("Cancelling: no filename supplied")
-        else:
-            sg.popup('The filename you chose was', fname)
-        """
-        import PySimpleGUI as sg
 
+        # Dialog for saving resulting image
         layout = [
             [
                 sg.InputText(key='File to Save', default_text='filename',
@@ -146,6 +167,7 @@ while True:
                 sg.Button(button_text="OK", key="--SAVE-PATH-VERIFIED--")
             ]
         ]
+
         sub_window = sg.Window(
             'Choose a path where to save file', 
             layout, 
@@ -157,15 +179,16 @@ while True:
             print("event:", event, "values: ", values)
             if event is None or event == 'Exit':
                 break
+
             elif event == 'Save As':
                 filename = values['Save As']
                 if filename:
                     sub_window['File to Save'].update(value=filename)
+            
             elif event == '--SAVE-PATH-VERIFIED--':
                 last_filtered_file.save(filename)
                 print("Wrote file to {}".format(filename))
 
         sub_window.close()
                 
-   
 window.close()
