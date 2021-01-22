@@ -37,19 +37,36 @@ If we work together on some feature, we should name the branch with suffix `feat
 <a name="structure"/>
 
 ## Structure of project
-
+    
     .
     ├── articles
     │   ├── An overview of semantic image segmentation_.pdf
+    │   ├── Article pool.md - Pool, from which we read articles.
     │   ├── Metal Additive Manufacturing Parts Inspection Using Convolutional Neural Network.pdf
-    │   ├── README.md
-    │   └── Scratch Detection in Cars Using a Convolutional Neural Network by Means of Transfer Learning.pdf
+    │   ├── Scratch Detection in Cars Using a Convolutional Neural Network by Means of Transfer Learning.pdf
+    │   ├── useful - folder with useful articles
+    │   ├── Useful.md - useful articles retold briefly
+    │   ├── useless - folder with useless articles
+    │   └── Useless.md - useless articles (To REMOVE)
     ├── code
-    │   └── README.md
+    │   ├── README.md
+    │   └── tools
+    │       ├── filter - folder with filters
+    │       ├── image.png - icon
+    │       ├── image.py - image holder (for NumPy and PIL interpretation)
+    │       ├── interface.py - interface script
+    │       └── save.png - icon
+    ├── datasets
+    │   └── photos
+    │       ├── annotations - Annotations created with LabelImg
+    │       └── last.txt - Last reviewed image
     ├── docs
     │   └── README.md
+    ├── here.jpg
     ├── LICENSE
-    └── README.md
+    ├── localization.ipynb
+    ├── README.md
+    └── ssd_detector.ipynb
 
 ## Recommended Soft
 
