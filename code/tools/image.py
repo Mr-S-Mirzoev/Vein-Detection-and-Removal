@@ -1,6 +1,8 @@
 from enum import Enum
 import cv2
+import numpy as np
 from PIL import Image
+from copy import deepcopy
 
 class ImageType(Enum):
     UNKNOWN_TYPE = 0
@@ -23,7 +25,7 @@ class ImageData:
             self.type_ = ImageType.NUMPY
         else:
             self.type_ = tp
-            self.image_ = data        
+            self.image_ = deepcopy(data)        
 
     def save(self, destination):
         """
@@ -63,3 +65,44 @@ class ImageData:
             self.image_ = im_np
 
         return ImageData(im_np, ImageType.NUMPY)
+
+
+    def make_gui_format(self):
+        imgCV = self.to_numpy().image_
+        imgCV = ImageData.image_resize(imgCV, height=300)
+        frame = cv2.cvtColor(imgCV, cv2.COLOR_RGB2BGR)
+
+        imgbytes = cv2.imencode(".png", frame)[1].tobytes()
+        return imgbytes
+
+    @staticmethod
+    def image_resize(image, width=None, height=None, inter=cv2.INTER_AREA):
+        # initialize the dimensions of the image to be resized and
+        # grab the image size
+        dim = None
+        (h, w) = image.shape[:2]
+
+        # if both the width and height are None, then return the
+        # original image
+        if width is None and height is None:
+            return image
+
+        # check to see if the width is None
+        if width is None:
+            # calculate the ratio of the height and construct the
+            # dimensions
+            r = height / float(h)
+            dim = (int(w * r), height)
+
+        # otherwise, the height is None
+        else:
+            # calculate the ratio of the width and construct the
+            # dimensions
+            r = width / float(w)
+            dim = (width, int(h * r))
+
+        # resize the image
+        resized = cv2.resize(image, dim, interpolation=inter)
+
+        # return the resized image
+        return resized
