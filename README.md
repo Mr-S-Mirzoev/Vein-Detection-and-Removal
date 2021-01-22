@@ -1,6 +1,14 @@
 # Vein-Detection-and-Removal
 The project for the idea to remove veins from a photo as after a surgical operation
 
+To set up run:
+
+    pip3 install -r requirments.txt
+
+Run scripts from this folder. For example:
+
+    python3 code/tools/interface.py
+
 ## Contains:
 
 - [Rules of collaboration](#rules)
