@@ -2,3 +2,4 @@ test/
 __pycache__/
 code/src/build/
 .vscode/
+*build/
