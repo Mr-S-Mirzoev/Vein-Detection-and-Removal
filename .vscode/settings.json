@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "qmap": "cpp",
         "qwidget": "cpp",
-        "qdialog": "cpp"
+        "qdialog": "cpp",
+        "qstring": "cpp"
     },
     "ros.distro": "dashing",
     "python.autoComplete.extraPaths": [
