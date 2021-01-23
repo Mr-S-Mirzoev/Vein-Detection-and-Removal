@@ -4,6 +4,8 @@
 #include <QtWidgets>
 #include <QString>
 
+#include <iostream>
+
 static inline QString fridgetMagnetsMimeType() { return QStringLiteral("application/x-fridgemagnet"); }
 
 //! [0]
@@ -55,6 +57,7 @@ DragWidget::DragWidget(QWidget *parent)
 void DragWidget::dragEnterEvent(QDragEnterEvent *event)
 {
     //! [4] //! [5]
+    std::cout << "TOOK from: " << event->pos().x() << " " << event->pos().y() << std::endl;
     if (event->mimeData()->hasFormat(fridgetMagnetsMimeType()))
     {
         if (children().contains(event->source()))
@@ -109,6 +112,7 @@ void DragWidget::dragMoveEvent(QDragMoveEvent *event)
 //! [9]
 void DragWidget::dropEvent(QDropEvent *event)
 {
+    std::cout << "PUT to: " << event->pos().x() << " " << event->pos().y() << std::endl;
     if (event->mimeData()->hasFormat(fridgetMagnetsMimeType()))
     {
         const QMimeData *mime = event->mimeData();
