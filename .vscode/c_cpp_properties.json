@@ -1,12 +1,43 @@
 {
     "configurations": [
         {
-            "name": "Mac",
-            "includePath": [],
+            "name": "QT",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/x86_64-linux-gnu/qt5/**",
+                "/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+                "/usr/include/x86_64-linux-gnu/qt5/QtDesignerComponents",
+                "/usr/include/x86_64-linux-gnu/qt5/QtGui",
+                "/usr/include/x86_64-linux-gnu/qt5/QtOpenGLExtensions",
+                "/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
+                "/usr/include/x86_64-linux-gnu/qt5/QtSql",
+                "/usr/include/x86_64-linux-gnu/qt5/QtQuick",
+                "/usr/include/x86_64-linux-gnu/qt5/QtDesigner",
+                "/usr/include/x86_64-linux-gnu/qt5/QtWebKit",
+                "/usr/include/x86_64-linux-gnu/qt5/QtXml",
+                "/usr/include/x86_64-linux-gnu/qt5/QtTest",
+                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                "/usr/include/x86_64-linux-gnu/qt5/QtDBus",
+                "/usr/include/x86_64-linux-gnu/qt5/QtQuickTest",
+                "/usr/include/x86_64-linux-gnu/qt5/QtQuickParticles",
+                "/usr/include/x86_64-linux-gnu/qt5/QtHelp",
+                "/usr/include/x86_64-linux-gnu/qt5/QtQmlDebug",
+                "/usr/include/x86_64-linux-gnu/qt5/QtUiTools",
+                "/usr/include/x86_64-linux-gnu/qt5/QtQuickWidgets",
+                "/usr/include/x86_64-linux-gnu/qt5/QtPlatformHeaders",
+                "/usr/include/x86_64-linux-gnu/qt5/QtQml",
+                "/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport",
+                "/usr/include/x86_64-linux-gnu/qt5/QtWebKitWidgets",
+                "/usr/include/x86_64-linux-gnu/qt5/QtConcurrent",
+                "/usr/include/x86_64-linux-gnu/qt5/QtUiPlugin",
+                "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+                "/usr/include/x86_64-linux-gnu/qt5/QtPacketProtocol"
+            ],
             "defines": [],
-            "macFrameworkPath": [],
-            "compilerPath": "/usr/local/bin/gcc-10",
-            "intelliSenseMode": "gcc-x64"
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
