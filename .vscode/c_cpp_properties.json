@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "QT",
+            "name": "QtFull",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/x86_64-linux-gnu/qt5/**",
@@ -32,6 +32,22 @@
                 "/usr/include/x86_64-linux-gnu/qt5/QtUiPlugin",
                 "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
                 "/usr/include/x86_64-linux-gnu/qt5/QtPacketProtocol"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        },
+        {
+            "name": "QtGUIOnly",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/x86_64-linux-gnu/qt5/**",
+                "/usr/include/x86_64-linux-gnu/qt5/QtGui",
+                "/usr/include/x86_64-linux-gnu/qt5/QtXml",
+                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
