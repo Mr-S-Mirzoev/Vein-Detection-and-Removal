@@ -11,9 +11,9 @@ import os.path
 import cv2
 
 
-"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
         LAYOUT SETUP
-"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
 
 # First the window layout in 2 columns
 
