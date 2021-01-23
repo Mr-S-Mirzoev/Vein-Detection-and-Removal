@@ -3,11 +3,12 @@
 
 #include <QWidget>
 #include <QMap>
+#include "finddialog.h"
 
 QT_BEGIN_NAMESPACE
+class QPushButton;
 class QLabel;
 class QLineEdit;
-class QPushButton;
 class QTextEdit;
 QT_END_NAMESPACE
 
@@ -17,28 +18,52 @@ class AddressBook : public QWidget
 
 public:
     AddressBook(QWidget *parent = nullptr);
+    enum Mode
+    {
+        NavigationMode,
+        AddingMode,
+        EditingMode
+    };
 
-    //! [slots]
 public slots:
     void addContact();
+    void editContact();
     void submitContact();
     void cancel();
-    //! [slots]
+    void removeContact();
+    void findContact();
+    void next();
+    void previous();
+    void saveToFile();
+    void loadFromFile();
+    //! [exportAsVCard() declaration]
+    void exportAsVCard();
+    //! [exportAsVCard() declaration]
 
-    //! [pushbutton declaration]
 private:
+    void updateInterface(Mode mode);
+
     QPushButton *addButton;
+    QPushButton *editButton;
+    QPushButton *removeButton;
+    QPushButton *findButton;
     QPushButton *submitButton;
     QPushButton *cancelButton;
+    QPushButton *nextButton;
+    QPushButton *previousButton;
+    QPushButton *loadButton;
+    QPushButton *saveButton;
+    //! [exportButton declaration]
+    QPushButton *exportButton;
+    //! [exportButton declaration]
     QLineEdit *nameLine;
     QTextEdit *addressText;
-    //! [pushbutton declaration]
 
-    //! [remaining private variables]
     QMap<QString, QString> contacts;
+    FindDialog *dialog;
     QString oldName;
     QString oldAddress;
+    Mode currentMode;
 };
-//! [remaining private variables]
 
 #endif

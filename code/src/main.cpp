@@ -1,7 +1,6 @@
 #include <QtWidgets>
 #include "addressbook.h"
 
-//! [main function]
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
@@ -11,4 +10,3 @@ int main(int argc, char *argv[])
 
     return app.exec();
 }
-//! [main function]

@@ -1,10 +1,18 @@
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.2.0)
 project (MyProject)
 
-find_package (Qt5Widgets)
+set(CMAKE_CXX_STANDARD 11) # This is equal to QMAKE_CXX_FLAGS += -std=c++0x
 
-set (MyProjectLib_src ${PROJECT_SOURCE_DIR}/src/addressbook.cpp)
-set (MyProjectLib_hdr ${PROJECT_SOURCE_DIR}/inc/addressbook.h)
+find_package(Qt5Widgets REQUIRED)
+
+set (MyProjectLib_src 
+    ${PROJECT_SOURCE_DIR}/src/addressbook.cpp
+    ${PROJECT_SOURCE_DIR}/src/finddialog.cpp
+)
+set (MyProjectLib_hdr 
+    ${PROJECT_SOURCE_DIR}/inc/addressbook.h
+    ${PROJECT_SOURCE_DIR}/inc/finddialog.h
+)
 # set (MyProjectLib_ui  ${PROJECT_SOURCE_DIR}/mainwindow.ui)
 set (MyProjectBin_src ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
