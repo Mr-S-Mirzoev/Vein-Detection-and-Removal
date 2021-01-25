@@ -7,6 +7,10 @@ Structure for C++ - based code should be:
 - scripts/ for python files (scripts)
 - deps/ for dependencies
 
+## Icons
+
+We use icons from [this](https://icons8.com/icon/pack/free-icons/bubbles) website.
+
 # Build driver
 
 Build with cmake:
@@ -15,3 +19,7 @@ Build with cmake:
 	make -C build
 
 # Currently supported filters
+
+- Equalizer (Gray and RGB)
+- Median Smoothing
+- Gaussian Smoothing

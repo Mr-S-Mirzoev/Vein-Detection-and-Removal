@@ -12,11 +12,14 @@ class FilterPipe:
     def work(self, source: ImageData):
         inp = deepcopy(source)
         out = None
+        
         print("Running image through a pipeline")
+
         for filt in self.pipeline_:
             out = filt.apply(inp)
             print("Running on: {}".format(filt))
             inp = out
+
         print()
 
         return deepcopy(out)
