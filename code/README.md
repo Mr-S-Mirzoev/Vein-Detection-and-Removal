@@ -1,4 +1,11 @@
-# Structure
+# Source code of app
+
+## Current work:
+
+- Filter chooser GUI.
+- Picking up the filter
+
+## Structure
 
 Structure for C++ - based code should be:
 
@@ -11,14 +18,14 @@ Structure for C++ - based code should be:
 
 We use icons from [this](https://icons8.com/icon/pack/free-icons/bubbles) website.
 
-# Build driver
+## Build driver
 
 Build with cmake:
 
 	cmake -B build
 	make -C build
 
-# Currently supported filters
+## Currently supported filters
 
 - Equalizer (Gray and RGB)
 - Median Smoothing
